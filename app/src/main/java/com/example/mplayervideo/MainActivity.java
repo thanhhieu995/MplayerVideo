@@ -3,6 +3,7 @@ package com.example.mplayervideo;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
@@ -84,6 +85,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String songName = (String) listView.getItemAtPosition(position);
+
+                startActivity(new Intent(getApplicationContext(), PlayerActivity.class).putExtra("songs", mySongs).putExtra("songName", songName).putExtra("pos", position));
             }
         });
     }
