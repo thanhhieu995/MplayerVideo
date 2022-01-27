@@ -1,13 +1,25 @@
 package com.example.mplayervideo;
 
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
 
 public class CustomAdapter extends BaseAdapter {
+
+    ListView listView;
+    String[] items;
+
+    public CustomAdapter(ListView listView, String[] items) {
+        this.listView = listView;
+        this.items = items;
+    }
+
     @Override
     public int getCount() {
-        return 0;
+        return items.length;
     }
 
     @Override
@@ -22,6 +34,10 @@ public class CustomAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        return null;
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item, null);
+        TextView txtSong = view.findViewById(R.id.txtSong);
+        txtSong.setSelected(true);
+        txtSong.setText(items[position]);
+        return view;
     }
 }
