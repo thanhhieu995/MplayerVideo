@@ -9,11 +9,9 @@ import android.widget.TextView;
 
 public class CustomAdapter extends BaseAdapter {
 
-    ListView listView;
     String[] items;
 
-    public CustomAdapter(ListView listView, String[] items) {
-        this.listView = listView;
+    public CustomAdapter(String[] items) {
         this.items = items;
     }
 
@@ -35,7 +33,7 @@ public class CustomAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item, null);
-        TextView txtSong = view.findViewById(R.id.txtSong);
+        TextView txtSong = view.findViewById(R.id.txtSongName);
         txtSong.setSelected(true);
         txtSong.setText(items[position]);
         return view;

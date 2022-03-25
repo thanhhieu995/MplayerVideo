@@ -13,7 +13,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="7"
+        android:layout_weight="3"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -83,18 +83,18 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3">
+        android:layout_weight="7">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <Button
+                android:id="@+id/btnPlay"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
-                android:id="@+id/btnPlay"
                 android:layout_centerHorizontal="true"
-                android:background="@drawable/ic_baseline_pause_24"/>
+                android:background="@drawable/ic_baseline_pause_24" />
 
             <Button
                 android:id="@+id/btnNext"
@@ -129,6 +129,17 @@
                 android:layout_marginRight="15dp"
                 android:layout_toLeftOf="@id/btnPrevious"
                 android:background="@drawable/ic_baseline_fast_rewind_24"/>
+
+            <com.gauravk.audiovisualizer.visualizer.BlastVisualizer
+                xmlns:custom="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/wave"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_alignParentBottom="true"
+                custom:avDensity="0.8"
+                custom:avType="outline"
+                custom:avColor="@color/av_dark_blue"
+                custom:avSpeed="normal"/>
         </RelativeLayout>
     </LinearLayout>
     
